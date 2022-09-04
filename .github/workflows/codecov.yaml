@@ -1,4 +1,4 @@
-name: Deploy Package
+name: Codecov
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy-package:
+  codecov:
     runs-on: ubuntu-latest
 
     strategy:
@@ -21,14 +21,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - run: pnpm install
-      - run: pnpm build
+      - run: pnpm test:cov
 
-      - uses: JS-DevTools/npm-publish@v1
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
         with:
-          token: ${{ secrets.NPM_TOKEN }}
-      - name: Tag
-        uses: K-Phoen/semver-release-action@master
-        with:
-          release_branch: master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.CODECOV_TOKEN }}

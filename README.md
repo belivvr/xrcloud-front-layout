@@ -12,6 +12,12 @@
   <img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint" />
 </div>
 
+<br>
+
+<div align="center">
+  <img src="https://codecov.io/gh/belivvr/xrcloud-front-layout/branch/main/graph/badge.svg?token=KGW6GQ1VLG" alt="codecov" />
+</div>
+
 ---
 
 ## Description
