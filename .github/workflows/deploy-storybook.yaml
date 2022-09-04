@@ -1,0 +1,34 @@
+name: Deploy Storybook
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-storybook:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 6.0.2
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install and build
+        run: |
+          pnpm install
+          pnpm build-storybook
+          touch storybook-static/.nojekyll
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: storybook-static
+          folder: storybook-static
+          clean: true
