@@ -20,7 +20,7 @@ export default function Header (): JSX.Element {
         zIndex: 100
       }}
     >
-      {/* TO DO 분리 해야할 컴포넌트
+      {/* TODO: Header에 필요한 컴포넌트들을 분리 할 것.
       <HeaderLogo/>
       <ListItem/>
       <LoginButton/>
