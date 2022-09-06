@@ -2,6 +2,8 @@ import { Box } from '@mui/material'
 
 import React from 'react'
 
+import HeaderLogo from './HeaderLogo'
+
 export default function Header (): JSX.Element {
   return (
     <Box
@@ -20,8 +22,8 @@ export default function Header (): JSX.Element {
         zIndex: 100
       }}
     >
-      {/* TODO: Header에 필요한 컴포넌트들을 분리 할 것.
       <HeaderLogo/>
+      {/* TODO: Header에 필요한 컴포넌트들을 분리 할 것.
       <ListItem/>
       <LoginButton/>
       <LanguageButton /> */}
