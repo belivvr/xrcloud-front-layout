@@ -6,8 +6,7 @@ export default function HeaderLogo (): JSX.Element {
   return (
     <a href="/">
       <Box
-        component="h1"
-        sx={{ display: 'flex', alignItems: 'flex-end', padding: '8px' }}
+        sx={{ display: 'flex', alignItems: 'flex-end', padding: '24px' }}
       >
         <Typography variant="h5" sx={{ fontWeight: 700 }}>
           XRCloud
