@@ -1,5 +1,7 @@
 import React from 'react'
+
 import Footer from './components/Footer'
+import Header from './components/Header'
 
 interface Props {
   children: React.ReactNode
@@ -7,9 +9,10 @@ interface Props {
 
 export default function Layout ({ children }: Props): JSX.Element {
   return (
-    <>
-      {children}
-      <Footer/>
-    </>
+      <>
+        <Header />
+        {children}
+        <Footer/>
+      </>
   )
 }
